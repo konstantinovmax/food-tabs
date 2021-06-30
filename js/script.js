@@ -36,7 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    const deadline = '2021-06-30';
+    const deadline = '2021-12-31';
 
     function getTimeRemaining(endtime) {
         const t = Date.parse(endtime) - Date.parse(new Date());
