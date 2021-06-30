@@ -87,4 +87,34 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     setClock('.timer', deadline);
+
+
+    const whiteButton = document.querySelector('.btn_white');
+    const blackButton = document.querySelector('.btn_dark');
+    const modal = document.querySelector('.modal');
+    const closeModalButton = document.querySelector('.modal__close');
+
+    function showModal() {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+    }
+
+    whiteButton.addEventListener('click', showModal);
+    blackButton.addEventListener('click', showModal);
+    closeModalButton.addEventListener('click', closeModal);
+    modal.addEventListener('click', (evt) => {
+        if (evt.target === modal) {
+            closeModal();
+        }
+    });
+    document.addEventListener('keydown', (evt) => {
+        if (evt.code === 'Escape') {
+            closeModal();
+        }
+    });
 });
